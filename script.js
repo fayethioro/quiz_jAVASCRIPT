@@ -57,7 +57,7 @@ const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
 const submitBtn = document.getElementById('submit')
 
-let currentQuiz = 0
+let QuizSuivant = 0
 let score = 0
 
 
@@ -68,13 +68,13 @@ function loadQuiz()
 
      deselectreponses()
 
-    const currentQuizData = quizData[currentQuiz]
+    const QuizSuivantData = quizData[QuizSuivant]
 
-    questionEl.innerText = currentQuizData.question
-    a_text.innerText = currentQuizData.a
-    b_text.innerText = currentQuizData.b
-    c_text.innerText = currentQuizData.c
-    d_text.innerText = currentQuizData.d
+    questionEl.innerText = QuizSuivantData.question
+    a_text.innerText = QuizSuivantData.a
+    b_text.innerText = QuizSuivantData.b
+    c_text.innerText = QuizSuivantData.c
+    d_text.innerText = QuizSuivantData.d
 }
 
 function deselectreponses() 
@@ -99,14 +99,14 @@ submitBtn.addEventListener('click', () => {
     const reponse = getSelected()
     if(reponse)
      {
-       if(reponse === quizData[currentQuiz].correct)
+       if(reponse === quizData[QuizSuivant].correct)
         {
            score++
         }
 
-       currentQuiz++
+       QuizSuivant++
 
-       if(currentQuiz < quizData.length) 
+       if(QuizSuivant < quizData.length) 
        {
            loadQuiz()
        } else 
