@@ -88,7 +88,7 @@ function getSelected()
     reponseEls.forEach(reponseEl => {
         if(reponseEl.checked) 
         {
-            reponse = reponseEl.id
+            reponse = reponseEl
         }
     })
     return reponse
